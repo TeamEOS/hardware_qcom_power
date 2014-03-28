@@ -1,3 +1,4 @@
+ifeq ($(TARGET_POWERHAL_VARIANT),)
 ifneq ($(filter deb flo hammerhead mako,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
@@ -15,5 +16,6 @@ LOCAL_SRC_FILES := \
 LOCAL_MODULE:= power.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
-endif
+endif # TARGET_DEVICE = googly_device
+endif # !TARGET_POWERHAL_VARIANT
 
