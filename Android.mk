@@ -1,3 +1,5 @@
+
+ifneq ($(BOARD_USES_LIBQC_OPT),true)
 ifeq ($(TARGET_POWERHAL_VARIANT),)
 ifneq ($(filter deb flo hammerhead mako,$(TARGET_DEVICE)),)
 
@@ -18,4 +20,4 @@ LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 endif # TARGET_DEVICE = googly_device
 endif # !TARGET_POWERHAL_VARIANT
-
+endif # !BOARD_USES_LIBQC_OPT
